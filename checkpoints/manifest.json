@@ -1,0 +1,58 @@
+{
+  "format_version": 1,
+  "status": "frozen",
+  "controllers": [
+    {
+      "release_id": "llama-3.1-8b",
+      "json": "llama-3.1-8b/controller.json",
+      "json_sha256": "e95e816e1756679ace3b1a9b9e7a4adf3b73a658fc1508fb3184a1dbb5556cd7",
+      "pt": "llama-3.1-8b/controller.pt",
+      "pt_sha256": "d59fc710c653a6e97f09be9026bb7164ffd493b44d58372678dd11d48661eed5"
+    },
+    {
+      "release_id": "qwen2.5-14b",
+      "json": "qwen2.5-14b/controller.json",
+      "json_sha256": "a6dcdf72de7f9af9ae378970188ef8e03e8ab1b348d027ab688381680921ee08",
+      "pt": "qwen2.5-14b/controller.pt",
+      "pt_sha256": "20049f4e74b0557941aadd845c43dfd1b0af2915871f95c4e5a3b8ece8caacce"
+    },
+    {
+      "release_id": "mixtral-8x7b",
+      "json": "mixtral-8x7b/controller.json",
+      "json_sha256": "07edbee4fb5a89fa108349c128ba882a199d169cb7b364c50670adfcd3a61ed1",
+      "pt": "mixtral-8x7b/controller.pt",
+      "pt_sha256": "631ff759f8ae9110596561c1c36bb880f2b0671618363b9a2c5abb69d45a8fc2"
+    },
+    {
+      "release_id": "qwen2.5-vl-7b",
+      "json": "qwen2.5-vl-7b/controller.json",
+      "json_sha256": "43783cf2868969159279e4852b1f4bfd50bae015473d6de191e423e373c12306",
+      "pt": "qwen2.5-vl-7b/controller.pt",
+      "pt_sha256": "7ef7c37a693bc47ecb7a64099a0369bbb729b7d630f25e983ef5dfb2411284a9"
+    },
+    {
+      "release_id": "qwen2.5-vl-32b-bf16",
+      "json": "qwen2.5-vl-32b-bf16/controller.json",
+      "json_sha256": "3c342b3ea3a8a4c681c5f29de1eacc687751c2b0e67e6d2c199cb92a08273754",
+      "pt": "qwen2.5-vl-32b-bf16/controller.pt",
+      "pt_sha256": "c0c88856d760b25fb05770fb523aef2f1f9e111f479fab99284ab75bdcae2cd9"
+    }
+  ],
+  "exploratory": {
+    "training_free_policies": [
+      {"release_id": "llama-3.1-8b", "path": "exploratory/training-free/llama-3.1-8b.json", "sha256": "3287842d5bbe991dc007ad7c20d13aa0c0211aa9867d3d4005b6e5104d6f9b51"},
+      {"release_id": "qwen2.5-14b", "path": "exploratory/training-free/qwen2.5-14b.json", "sha256": "f69863228a7c1e8084082a42f0f394aa6485452ba24480d96de4fa3ddb53add8"},
+      {"release_id": "mixtral-8x7b", "path": "exploratory/training-free/mixtral-8x7b.json", "sha256": "675fb99384b8cfe3c648d454bc4da8087d55d67ef14da70365695e96541ccd6e"}
+    ],
+    "embedding_controllers": [
+      {"release_id": "llama-3.1-8b", "json": "exploratory/embed/llama-3.1-8b/controller.json", "json_sha256": "4a4b11ed20508aa9e129d22c5ebf54ffd3473424bd614f7402c1b1e65864f81d", "pt": "exploratory/embed/llama-3.1-8b/controller.pt", "pt_sha256": "87e5dacdac1fb96d43b25b130f381e0900cc7928f02b741a3db083abd9f833a9", "pca": "exploratory/embed/llama-3.1-8b/embedding_pca.json", "pca_sha256": "bd387273346ac061d831cff438e9bf50fc9e20d625026cd08eb82ef6711153a4", "threshold_policy": "exploratory/embed/llama-3.1-8b/threshold_policy.json", "threshold_policy_sha256": "750ce96c190c5693b00e5f23a493ebdab5a823a9aff3254e50ab92f22486edd1"},
+      {"release_id": "qwen2.5-14b", "json": "exploratory/embed/qwen2.5-14b/controller.json", "json_sha256": "107ced058033d205e064ac11514489965510ff862caee9c2ba90ad74945f4a4c", "pt": "exploratory/embed/qwen2.5-14b/controller.pt", "pt_sha256": "886d23350b53b12ef0128254cc83d3637a6ddcd9f702c390cbf8c6a23624e16c", "pca": "exploratory/embed/qwen2.5-14b/embedding_pca.json", "pca_sha256": "bfe4678f383fa1018f7f025f08e17d6ae8cc631c3f025f5045f2e25b64c59b55", "threshold_policy": "exploratory/embed/qwen2.5-14b/threshold_policy.json", "threshold_policy_sha256": "c854cd1b750401b54e6e8460840b2a4534a791491b09775170f064031184531c"},
+      {"release_id": "mixtral-8x7b", "json": "exploratory/embed/mixtral-8x7b/controller.json", "json_sha256": "7d0ba9d4897973016304e9052b90db4cfb175e4a721b084d38fa4811c80eb3b8", "pt": "exploratory/embed/mixtral-8x7b/controller.pt", "pt_sha256": "4f1c3fb3858ad7e4ad8b1375353396197d7f5f2761bb4ff73500d4b31f97c610", "pca": "exploratory/embed/mixtral-8x7b/embedding_pca.json", "pca_sha256": "14b91059ca028ea95cbcde8628ca73ac9bc3d9c074cdfc92b79902fc4a077a6f", "threshold_policy": "exploratory/embed/mixtral-8x7b/threshold_policy.json", "threshold_policy_sha256": "3c783a73c8eda5d9315b6610be3ed57996056b83d2a89dc88179c7b9441dbcd1"}
+    ],
+    "judge_models": [
+      {"provider": "OpenAI", "path": "exploratory/judge/openai.joblib", "sha256": "81c3b528ae2aa8de6a4b71d6a596f74423f5ad7594440e9043a081615524c742"},
+      {"provider": "Anthropic", "path": "exploratory/judge/anthropic.joblib", "sha256": "93becf04a48bba4a0ba3cdeeeb5553c85f80258acde4b7d02e6a1b5e0ea2ff17"},
+      {"provider": "Qwen-Max", "path": "exploratory/judge/qwen-max.joblib", "sha256": "bb91cb337e44fd7f278351509d3c087beb53bf9260c427537af9af7355a4299a"}
+    ]
+  }
+}

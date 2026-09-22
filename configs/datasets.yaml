@@ -1,0 +1,20 @@
+datasets:
+  gsm8k: {task_type: math_qa, primary_metric: exact_match_number}
+  math: {task_type: math_competition, primary_metric: exact_match_number}
+  drop: {task_type: multihop_qa, primary_metric: f1}
+  folio: {task_type: logical_label, primary_metric: accuracy}
+  proofwriter: {task_type: logical_label, primary_metric: accuracy}
+  bbh_temporal: {task_type: logical_label, primary_metric: accuracy}
+  humaneval: {task_type: code_generation, primary_metric: pass@1}
+  mbpp: {task_type: code_generation, primary_metric: pass@1}
+  commonsense_qa: {task_type: multiple_choice, primary_metric: accuracy}
+  strategyqa: {task_type: binary_qa, primary_metric: accuracy}
+  boolq: {task_type: binary_qa, primary_metric: accuracy}
+  mmlu: {task_type: multiple_choice, primary_metric: accuracy}
+  race: {task_type: multiple_choice, primary_metric: accuracy}
+  hotpotqa: {task_type: multihop_qa, primary_metric: f1}
+  narrativeqa: {task_type: multihop_qa, primary_metric: f1}
+  longbench_multifieldqa: {task_type: multihop_qa, primary_metric: f1}
+  aokvqa: {task_type: visual_reasoning_mc, primary_metric: accuracy}
+  ai2d: {task_type: visual_reasoning_mc, primary_metric: accuracy}
+  m3cot: {task_type: visual_reasoning_mc, primary_metric: accuracy}

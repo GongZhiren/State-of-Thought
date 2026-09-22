@@ -1,0 +1,11 @@
+extends: ../paper/qwen2.5-14b.yaml
+release_id: qwen2.5-14b-embedding
+variant: embedding
+checkpoint: checkpoints/exploratory/embed/qwen2.5-14b/controller.pt
+threshold_policy: checkpoints/exploratory/embed/qwen2.5-14b/threshold_policy.json
+embedding:
+  pca: checkpoints/exploratory/embed/qwen2.5-14b/embedding_pca.json
+  model: text-embedding-3-small
+  h_source: spectral
+  m_source: raw_pca
+output_dir: outputs/exploratory/qwen2.5-14b-embedding

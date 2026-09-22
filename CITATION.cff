@@ -1,0 +1,43 @@
+cff-version: 1.2.0
+message: "If you use State-of-Thought, please cite the paper below."
+title: "State-of-Thought"
+type: software
+version: 1.0.0
+date-released: 2026-09-22
+license: MIT
+repository-code: "https://github.com/GongZhiren/State-of-Thought"
+url: "https://gongzhiren.github.io/SoT-website/"
+authors:
+  - family-names: Gong
+    given-names: Zhiren
+  - family-names: Hou
+    given-names: Yikun
+  - family-names: Zeng
+    given-names: Zihao
+  - family-names: Xiao
+    given-names: Ming
+  - family-names: Yuen
+    given-names: Chau
+  - family-names: Lim
+    given-names: Wei Yang Bryan
+preferred-citation:
+  type: article
+  title: "State of Thought Enables Endogenous Reasoning"
+  year: 2026
+  authors:
+    - family-names: Gong
+      given-names: Zhiren
+    - family-names: Hou
+      given-names: Yikun
+    - family-names: Zeng
+      given-names: Zihao
+    - family-names: Xiao
+      given-names: Ming
+    - family-names: Yuen
+      given-names: Chau
+    - family-names: Lim
+      given-names: Wei Yang Bryan
+  identifiers:
+    - type: doi
+      value: 10.48550/arXiv.2609.16055
+  url: "https://arxiv.org/abs/2609.16055"

@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.venv/
+.env
+RELEASE_STATUS.md
+build/
+dist/
+data/eval_fixed/
+data/vlm/
+models/
+outputs/
+# Checkpoints and compressed numeric training trajectories are tracked with Git LFS.

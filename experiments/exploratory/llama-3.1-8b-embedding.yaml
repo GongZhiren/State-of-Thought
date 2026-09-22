@@ -1,0 +1,11 @@
+extends: ../paper/llama-3.1-8b.yaml
+release_id: llama-3.1-8b-embedding
+variant: embedding
+checkpoint: checkpoints/exploratory/embed/llama-3.1-8b/controller.pt
+threshold_policy: checkpoints/exploratory/embed/llama-3.1-8b/threshold_policy.json
+embedding:
+  pca: checkpoints/exploratory/embed/llama-3.1-8b/embedding_pca.json
+  model: text-embedding-3-small
+  h_source: spectral
+  m_source: raw_pca
+output_dir: outputs/exploratory/llama-3.1-8b-embedding

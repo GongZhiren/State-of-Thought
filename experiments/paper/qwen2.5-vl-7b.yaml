@@ -1,0 +1,19 @@
+release_id: qwen2.5-vl-7b
+modality: vision-language
+model: Qwen/Qwen2.5-VL-7B-Instruct
+checkpoint: checkpoints/qwen2.5-vl-7b/controller.pt
+device: cuda:0
+dtype: bfloat16
+quantization: none
+processor_use_fast: true
+seed: 42
+output_dir: outputs/paper/qwen2.5-vl-7b
+training:
+  template_checkpoint: checkpoints/qwen2.5-vl-7b/controller.pt
+  offline_records: data/training/qwen2.5-vl-7b/offline_trajectories.jsonl.gz
+  output_artifact: outputs/training/qwen2.5-vl-7b/controller.json
+  output_checkpoint: outputs/training/qwen2.5-vl-7b/controller.pt
+datasets:
+  - {name: aokvqa, task_type: visual_reasoning_mc, primary_metric: accuracy, path: data/vlm/aokvqa_val/eval_fixed.jsonl, max_samples: 200}
+  - {name: ai2d, task_type: visual_reasoning_mc, primary_metric: accuracy, path: data/vlm/ai2d/eval_fixed.jsonl, max_samples: 150}
+  - {name: m3cot, task_type: visual_reasoning_mc, primary_metric: accuracy, path: data/vlm/m3cot/eval_fixed.jsonl, max_samples: 150}

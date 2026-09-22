@@ -1,0 +1,3 @@
+release_id,domain,dataset,metric,n,score_percent,mean_completion_tokens,record_status,artifact,records
+llama-3.1-8b-training-free,long_context_reasoning,longbench_multifieldqa,f1,110,24.8,966.1,bundled,checkpoints/exploratory/training-free/llama-3.1-8b.json,results/records/exploratory/llama-3.1-8b-training-free/longbench_multifieldqa.jsonl
+llama-3.1-8b-embedding,long_context_reasoning,longbench_multifieldqa,f1,110,24.8,720.2,bundled,checkpoints/exploratory/embed/llama-3.1-8b/controller.pt,results/records/exploratory/llama-3.1-8b-embedding/longbench_multifieldqa.jsonl

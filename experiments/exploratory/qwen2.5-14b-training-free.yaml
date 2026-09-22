@@ -1,0 +1,5 @@
+extends: ../paper/qwen2.5-14b.yaml
+release_id: qwen2.5-14b-training-free
+variant: training_free
+training_free_policy: checkpoints/exploratory/training-free/qwen2.5-14b.json
+output_dir: outputs/exploratory/qwen2.5-14b-training-free

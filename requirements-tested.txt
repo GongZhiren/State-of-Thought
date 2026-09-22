@@ -1,0 +1,17 @@
+# Exact versions used for release checks. Install the PyTorch wheel
+# appropriate for the target CUDA/CPU platform before the remaining packages.
+torch==2.8.0
+transformers==4.57.1
+accelerate==1.11.0
+numpy==2.3.3
+PyYAML==6.0.3
+safetensors==0.6.2
+tqdm==4.67.1
+Pillow==11.3.0
+datasets==4.4.0
+joblib==1.5.2
+scikit-learn==1.7.2
+openai==2.14.0
+build==1.6.0
+pytest==9.0.3
+ruff==0.16.6

@@ -1,0 +1,5 @@
+extends: ../paper/mixtral-8x7b.yaml
+release_id: mixtral-8x7b-training-free
+variant: training_free
+training_free_policy: checkpoints/exploratory/training-free/mixtral-8x7b.json
+output_dir: outputs/exploratory/mixtral-8x7b-training-free

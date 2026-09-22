@@ -1,0 +1,7 @@
+release_id,domain,dataset,metric,n,score_percent,mean_completion_tokens,mean_latency_seconds,latency_samples,record_status,artifact,records
+qwen2.5-vl-7b,vision_language_reasoning,aokvqa,accuracy,200,87.5,191.5,4.35,20,bundled,checkpoints/qwen2.5-vl-7b/controller.pt,results/records/main/vlm/qwen2.5-vl-7b/aokvqa.jsonl
+qwen2.5-vl-7b,vision_language_reasoning,ai2d,accuracy,150,86.7,215.1,5.39,20,bundled,checkpoints/qwen2.5-vl-7b/controller.pt,results/records/main/vlm/qwen2.5-vl-7b/ai2d.jsonl
+qwen2.5-vl-7b,vision_language_reasoning,m3cot,accuracy,150,87.3,198.0,4.47,20,bundled,checkpoints/qwen2.5-vl-7b/controller.pt,results/records/main/vlm/qwen2.5-vl-7b/m3cot.jsonl
+qwen2.5-vl-32b-bf16,vision_language_reasoning,aokvqa,accuracy,200,85.5,424.9,23.20,20,bundled,checkpoints/qwen2.5-vl-32b-bf16/controller.pt,results/records/main/vlm/qwen2.5-vl-32b-bf16/aokvqa.jsonl
+qwen2.5-vl-32b-bf16,vision_language_reasoning,ai2d,accuracy,150,90.0,364.4,19.22,20,bundled,checkpoints/qwen2.5-vl-32b-bf16/controller.pt,results/records/main/vlm/qwen2.5-vl-32b-bf16/ai2d.jsonl
+qwen2.5-vl-32b-bf16,vision_language_reasoning,m3cot,accuracy,150,88.0,408.7,20.13,20,bundled,checkpoints/qwen2.5-vl-32b-bf16/controller.pt,results/records/main/vlm/qwen2.5-vl-32b-bf16/m3cot.jsonl

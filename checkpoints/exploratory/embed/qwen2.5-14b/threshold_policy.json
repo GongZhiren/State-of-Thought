@@ -1,0 +1,24 @@
+{
+  "version": "certified_fast.v1",
+  "created_at": "2026-04-28T06:33:50.343088+00:00",
+  "artifact": null,
+  "fit_rows": 0,
+  "global": {
+    "base_stop_threshold": 0.5,
+    "base_gate_prob_threshold": 0.475
+  },
+  "stop_model": {
+    "base": 0.5,
+    "target_stop_prob": 0.5,
+    "k_avg_stop_prob": 0.25,
+    "delta_clip": 0.12
+  },
+  "gate_model": {
+    "base": 0.475,
+    "target_gate_density": 0.65,
+    "k_gate_density": 0.2,
+    "delta_clip": 0.1
+  },
+  "per_dataset": {},
+  "notes": "Policy is learned from current artifact (+ optional current-run calibration diagnostics), no historical injection."
+}

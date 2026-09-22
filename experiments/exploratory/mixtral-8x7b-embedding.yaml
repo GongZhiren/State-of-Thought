@@ -1,0 +1,11 @@
+extends: ../paper/mixtral-8x7b.yaml
+release_id: mixtral-8x7b-embedding
+variant: embedding
+checkpoint: checkpoints/exploratory/embed/mixtral-8x7b/controller.pt
+threshold_policy: checkpoints/exploratory/embed/mixtral-8x7b/threshold_policy.json
+embedding:
+  pca: checkpoints/exploratory/embed/mixtral-8x7b/embedding_pca.json
+  model: text-embedding-3-small
+  h_source: spectral
+  m_source: raw_pca
+output_dir: outputs/exploratory/mixtral-8x7b-embedding

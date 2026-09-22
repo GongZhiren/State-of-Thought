@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/GongZhiren/State-of-Thought/blob/main/results/schema/prediction-record.schema.json",
+  "title": "State-of-Thought publication prediction record",
+  "description": "One privacy-safe, publication-aligned evaluation record.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "record_schema_version",
+    "id",
+    "dataset",
+    "task_type",
+    "prediction_raw",
+    "prediction",
+    "reference_sha256",
+    "metric",
+    "metric_value",
+    "completion_tokens"
+  ],
+  "properties": {
+    "record_schema_version": {
+      "const": 1
+    },
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "dataset": {
+      "type": "string",
+      "minLength": 1
+    },
+    "task_type": {
+      "type": "string",
+      "minLength": 1
+    },
+    "prediction_raw": {
+      "type": "string"
+    },
+    "prediction": {
+      "type": "string"
+    },
+    "reference_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "metric": {
+      "type": "string",
+      "enum": ["accuracy", "exact_match_number", "f1", "pass@1"]
+    },
+    "metric_input": {
+      "type": "string",
+      "enum": ["parsed", "raw"]
+    },
+    "metric_value": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "completion_tokens": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "stopped_by": {
+      "type": ["string", "null"]
+    }
+  }
+}

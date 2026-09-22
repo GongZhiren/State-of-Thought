@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "format": "gzip-compressed JSONL",
+  "privacy": "numeric controller supervision; no prompts or generated text",
+  "runs": [
+    {
+      "release_id": "llama-3.1-8b",
+      "path": "data/training/llama-3.1-8b/offline_trajectories.jsonl.gz",
+      "rows": 4752,
+      "sha256": "74f691267bc6221ca8b4b8cc6f6ad9bfb9009abb388dc001d58a5902e2cb2611",
+      "decompressed_sha256": "db01f5ab757e8a712ed4ac638d6e852fdb0999f1c8eb69a8917106da096b32e7"
+    },
+    {
+      "release_id": "qwen2.5-14b",
+      "path": "data/training/qwen2.5-14b/offline_trajectories.jsonl.gz",
+      "rows": 4495,
+      "sha256": "e734d822edecceea03531fc41364b39b18bfc8ff8fc8372c727e4b90112b822d",
+      "decompressed_sha256": "884da957752689f8f626d629dc32f15407a5f61e514a357ea99e16f8b494a46f"
+    },
+    {
+      "release_id": "mixtral-8x7b",
+      "path": "data/training/mixtral-8x7b/offline_trajectories.jsonl.gz",
+      "rows": 3888,
+      "sha256": "933b8ec0fdb9659f78f874960ba6b2379a0146cb52b4624176e2c3f8e59e29dc",
+      "decompressed_sha256": "1d160f96cfda7749db9f33ae9cc9fe187700a032c4f9f8530610241eb39dbcb0"
+    },
+    {
+      "release_id": "qwen2.5-vl-7b",
+      "path": "data/training/qwen2.5-vl-7b/offline_trajectories.jsonl.gz",
+      "rows": 288,
+      "sha256": "0a213453ed7f216fe4e0983dc5c4d91741a599bdf4ace4ef29a3ae72f1f0b0a5",
+      "decompressed_sha256": "aca8f17db48f50f2cb2925472b0f17e5c5a9baec3527fdb511af2e94f7a6989c"
+    },
+    {
+      "release_id": "qwen2.5-vl-32b-bf16",
+      "path": "data/training/qwen2.5-vl-32b-bf16/offline_trajectories.jsonl.gz",
+      "rows": 297,
+      "sha256": "c70e16572eb16219b8aa731326012e5572a581da5364792a21d1880dc71028c2",
+      "decompressed_sha256": "beab388b3180d9fe95b03a2385126ed3de159c0c4ba550ae6304d64d3eb258fb"
+    }
+  ]
+}

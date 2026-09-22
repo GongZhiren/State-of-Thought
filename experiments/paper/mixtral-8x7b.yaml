@@ -1,0 +1,34 @@
+release_id: mixtral-8x7b
+modality: text
+model: mistralai/Mixtral-8x7B-Instruct-v0.1
+checkpoint: checkpoints/mixtral-8x7b/controller.pt
+device: cuda:0
+dtype: bfloat16
+quantization: none
+attention_implementation: sdpa
+use_fast: true
+seed: 42
+commit_mode: fullchain
+output_dir: outputs/paper/mixtral-8x7b
+training:
+  template_checkpoint: checkpoints/mixtral-8x7b/controller.pt
+  offline_records: data/training/mixtral-8x7b/offline_trajectories.jsonl.gz
+  output_artifact: outputs/training/mixtral-8x7b/controller.json
+  output_checkpoint: outputs/training/mixtral-8x7b/controller.pt
+datasets:
+  - {name: gsm8k, task_type: math_qa, primary_metric: exact_match_number, path: data/eval_fixed/gsm8k.jsonl, max_samples: 500}
+  - {name: math, task_type: math_competition, primary_metric: exact_match_number, path: data/eval_fixed/math.jsonl, max_samples: 400}
+  - {name: drop, task_type: multihop_qa, primary_metric: f1, path: data/eval_fixed/drop.jsonl, max_samples: 300}
+  - {name: folio, task_type: logical_label, primary_metric: accuracy, path: data/eval_fixed/folio.jsonl, max_samples: 203}
+  - {name: proofwriter, task_type: logical_label, primary_metric: accuracy, path: data/eval_fixed/proofwriter.jsonl, max_samples: 400}
+  - {name: bbh_temporal, task_type: logical_label, primary_metric: accuracy, path: data/eval_fixed/bbh_temporal.jsonl, max_samples: 100}
+  - {name: humaneval, task_type: code_generation, primary_metric: pass@1, path: data/eval_fixed/humaneval.jsonl, max_samples: 164}
+  - {name: mbpp, task_type: code_generation, primary_metric: pass@1, path: data/eval_fixed/mbpp.jsonl, max_samples: 250}
+  - {name: commonsense_qa, task_type: multiple_choice, primary_metric: accuracy, path: data/eval_fixed/commonsense_qa.jsonl, max_samples: 400}
+  - {name: strategyqa, task_type: binary_qa, primary_metric: accuracy, path: data/eval_fixed/strategyqa.jsonl, max_samples: 400}
+  - {name: boolq, task_type: binary_qa, primary_metric: accuracy, path: data/eval_fixed/boolq.jsonl, max_samples: 400}
+  - {name: mmlu, task_type: multiple_choice, primary_metric: accuracy, path: data/eval_fixed/mmlu.jsonl, max_samples: 500}
+  - {name: race, task_type: multiple_choice, primary_metric: accuracy, path: data/eval_fixed/race.jsonl, max_samples: 300}
+  - {name: hotpotqa, task_type: multihop_qa, primary_metric: f1, path: data/eval_fixed/hotpotqa.jsonl, max_samples: 300}
+  - {name: narrativeqa, task_type: multihop_qa, primary_metric: f1, path: data/eval_fixed/narrativeqa.jsonl, max_samples: 250}
+  - {name: longbench_multifieldqa, task_type: multihop_qa, primary_metric: f1, path: data/eval_fixed/longbench_multifieldqa.jsonl, max_samples: 110}

@@ -1,0 +1,102 @@
+{
+  "schema_version": 2,
+  "title": "State-of-Thought publication-aligned results",
+  "description": "Frozen aggregate metrics and identities for the final public result bundle.",
+  "status": "publication-aligned",
+  "record_schema": "results/schema/prediction-record.schema.json",
+  "summaries": [
+    "results/summaries/main_llm_accuracy.csv",
+    "results/summaries/main_vlm.csv",
+    "results/summaries/exploratory.csv"
+  ],
+  "metric_scale": "fraction",
+  "completion_tokens": "mean aggregated completion tokens",
+  "latency_seconds": "mean end-to-end wall time; hardware-specific reference only",
+  "runs": [
+    {
+      "release_id": "llama-3.1-8b",
+      "config": "experiments/paper/llama-3.1-8b.yaml",
+      "checkpoint": "checkpoints/llama-3.1-8b/controller.pt",
+      "checkpoint_sha256": "d59fc710c653a6e97f09be9026bb7164ffd493b44d58372678dd11d48661eed5",
+      "record_status": "bundled",
+      "metrics": [
+        {"dataset": "gsm8k", "n": 500, "value": 0.818, "completion_tokens": 186.062, "records": "results/records/main/llm/llama-3.1-8b/gsm8k.jsonl", "records_sha256": "6c227b474bd46472c7ee72a02981422ce36b6c32da98a296beceadd950d40ba7"},
+        {"dataset": "math", "n": 400, "value": 0.6475, "completion_tokens": 451.985, "records": "results/records/main/llm/llama-3.1-8b/math.jsonl", "records_sha256": "ab10e665a0e0ba01a4b0736777f5f659f1b3c908f322c5532a146271ccb05d8e"},
+        {"dataset": "drop", "n": 300, "value": 0.40482410151594017, "completion_tokens": 129.08333333333334, "records": "results/records/main/llm/llama-3.1-8b/drop.jsonl", "records_sha256": "640f9b233f8e224e14779526b8271365342c386969edd50df65a2e245863831b"},
+        {"dataset": "folio", "n": 203, "value": 0.4975369458128079, "completion_tokens": 253.74384236453201, "records": "results/records/main/llm/llama-3.1-8b/folio.jsonl", "records_sha256": "a035c25abbef6c89d8af5839499155e714399e3e7b3799cf639e3e11188bf619"},
+        {"dataset": "proofwriter", "n": 400, "value": 0.6475, "completion_tokens": 254.93, "records": "results/records/main/llm/llama-3.1-8b/proofwriter.jsonl", "records_sha256": "ac4d70634be7ac9c9fa8ed1f56f25abefaf5f6186bb293ef2dd265b62cc8bcd1"},
+        {"dataset": "bbh_temporal", "n": 100, "value": 0.78, "completion_tokens": 197.24, "records": "results/records/main/llm/llama-3.1-8b/bbh_temporal.jsonl", "records_sha256": "b01989bed200145f75e9eeebed72fd68f67c3f3de39207a2d10bc2dd8df43aee"},
+        {"dataset": "humaneval", "n": 164, "value": 0.5914634146341463, "completion_tokens": 403.9634146341463, "records": "results/records/main/llm/llama-3.1-8b/humaneval.jsonl", "records_sha256": "05fa802be6c16622ca0222986f11f9b440b90f5e64007ef36c607b3eed4ad8f6"},
+        {"dataset": "mbpp", "n": 250, "value": 0.468, "completion_tokens": 405.196, "records": "results/records/main/llm/llama-3.1-8b/mbpp.jsonl", "records_sha256": "a4a2263594d1443b30e8c9fcf29ebc9c3b31eaac46d2e97466511362341cd334"},
+        {"dataset": "commonsense_qa", "n": 400, "value": 0.695, "completion_tokens": 107.4775, "records": "results/records/main/llm/llama-3.1-8b/commonsense_qa.jsonl", "records_sha256": "51aa8f44b4839b8e3d4cc1f150ee4bfe45a69dcc8527f93229a84ea0b3c66ef5"},
+        {"dataset": "strategyqa", "n": 400, "value": 0.6875, "completion_tokens": 121.17, "records": "results/records/main/llm/llama-3.1-8b/strategyqa.jsonl", "records_sha256": "699cd0b169dcf2a6981b55ad477d29ae5dbca20c5a676162746a360df14becde"},
+        {"dataset": "boolq", "n": 400, "value": 0.8225, "completion_tokens": 21.8175, "records": "results/records/main/llm/llama-3.1-8b/boolq.jsonl", "records_sha256": "a65851e1bf976512fa6b7425a4e8af3ef3cc676449dd7fdf274d1d34a01b74a0"},
+        {"dataset": "mmlu", "n": 500, "value": 0.65, "completion_tokens": 97.61, "records": "results/records/main/llm/llama-3.1-8b/mmlu.jsonl", "records_sha256": "b10f6678df9accfb4ca502661b36e6aa0843882dd3e73c3fa4165992381ac800"},
+        {"dataset": "race", "n": 300, "value": 0.67, "completion_tokens": 26.363333333333333, "records": "results/records/main/llm/llama-3.1-8b/race.jsonl", "records_sha256": "a8413f54f76f67347d31f6b0b6ae99df6300f3e0d3ad95b9e0e402b9f630699b"},
+        {"dataset": "hotpotqa", "n": 300, "value": 0.24941890994936156, "completion_tokens": 435.1533333333333, "records": "results/records/main/llm/llama-3.1-8b/hotpotqa.jsonl", "records_sha256": "888f61ae49f5aef79cbb9af7ac1aefe422b93c0a7e615c6dc5d6df5d476b57a7"},
+        {"dataset": "narrativeqa", "n": 250, "value": 0.3897154255003872, "completion_tokens": 207.148, "records": "results/records/main/llm/llama-3.1-8b/narrativeqa.jsonl", "records_sha256": "8f639b7d3a2a2509c6f7a4ae23f57dba254583052c707ce6f3b2d4eb6c0f3ae9"},
+        {"dataset": "longbench_multifieldqa", "n": 110, "value": 0.34661737178838403, "completion_tokens": 146.62727272727273, "records": "results/records/main/llm/llama-3.1-8b/longbench_multifieldqa.jsonl", "records_sha256": "9ac3b1be835f4e805c161b80ffd8d9f162e95c020c766eae9af5986abac056b8"}
+      ]
+    },
+    {
+      "release_id": "llama-3.1-8b-training-free",
+      "config": "experiments/exploratory/llama-3.1-8b-training-free.yaml",
+      "policy": "checkpoints/exploratory/training-free/llama-3.1-8b.json",
+      "record_status": "bundled",
+      "metric_policy": "complete decoded-answer token F1 (paper LongBench calculation)",
+      "metrics": [
+        {"dataset": "longbench_multifieldqa", "n": 110, "value": 0.24835064381370867, "completion_tokens": 966.1272727272727, "records": "results/records/exploratory/llama-3.1-8b-training-free/longbench_multifieldqa.jsonl", "records_sha256": "44a2e8118883bbddf62488014e6ecffd52aa93d54e65f674cf15b5f93c4f38d1"}
+      ]
+    },
+    {
+      "release_id": "llama-3.1-8b-embedding",
+      "config": "experiments/exploratory/llama-3.1-8b-embedding.yaml",
+      "checkpoint": "checkpoints/exploratory/embed/llama-3.1-8b/controller.pt",
+      "record_status": "bundled",
+      "metric_policy": "complete decoded-answer token F1 (paper LongBench calculation)",
+      "metrics": [
+        {"dataset": "longbench_multifieldqa", "n": 110, "value": 0.24835064381370867, "completion_tokens": 720.1909090909091, "records": "results/records/exploratory/llama-3.1-8b-embedding/longbench_multifieldqa.jsonl", "records_sha256": "a5d2980cbb29ee3cf1a08821c3d7c0a3faed8e9b58757c4aba4d0e8d2d144a1b"}
+      ]
+    },
+    {
+      "release_id": "qwen2.5-14b",
+      "config": "experiments/paper/qwen2.5-14b.yaml",
+      "checkpoint": "checkpoints/qwen2.5-14b/controller.pt",
+      "checkpoint_sha256": "20049f4e74b0557941aadd845c43dfd1b0af2915871f95c4e5a3b8ece8caacce",
+      "record_status": "aggregate-only",
+      "metrics": {"gsm8k": 0.918, "math": 0.722, "drop": 0.151, "folio": 0.665, "proofwriter": 0.878, "bbh_temporal": 0.91, "humaneval": 0.756, "mbpp": 0.628, "commonsense_qa": 0.805, "strategyqa": 0.75, "boolq": 0.868, "mmlu": 0.8, "race": 0.86, "hotpotqa": 0.242, "narrativeqa": 0.254, "longbench_multifieldqa": 0.273}
+    },
+    {
+      "release_id": "mixtral-8x7b",
+      "config": "experiments/paper/mixtral-8x7b.yaml",
+      "checkpoint": "checkpoints/mixtral-8x7b/controller.pt",
+      "checkpoint_sha256": "631ff759f8ae9110596561c1c36bb880f2b0671618363b9a2c5abb69d45a8fc2",
+      "record_status": "aggregate-only",
+      "metrics": {"gsm8k": 0.692, "math": 0.42, "drop": 0.14, "folio": 0.438, "proofwriter": 0.675, "bbh_temporal": 0.55, "humaneval": 0.335, "mbpp": 0.432, "commonsense_qa": 0.71, "strategyqa": 0.678, "boolq": 0.815, "mmlu": 0.684, "race": 0.76, "hotpotqa": 0.172, "narrativeqa": 0.222, "longbench_multifieldqa": 0.437}
+    },
+    {
+      "release_id": "qwen2.5-vl-7b",
+      "config": "experiments/paper/qwen2.5-vl-7b.yaml",
+      "checkpoint": "checkpoints/qwen2.5-vl-7b/controller.pt",
+      "checkpoint_sha256": "7ef7c37a693bc47ecb7a64099a0369bbb729b7d630f25e983ef5dfb2411284a9",
+      "record_status": "bundled",
+      "metrics": [
+        {"dataset": "aokvqa", "n": 200, "value": 0.875, "completion_tokens": 191.465, "latency_seconds": 4.354313858000387, "latency_n": 20, "ordered_id_sha256": "0192b4c7c9b8518414e5ef555dc96f6e491e9ead83fb457a90488d0d058798f6", "records": "results/records/main/vlm/qwen2.5-vl-7b/aokvqa.jsonl", "records_sha256": "059beaca55146ef5d118077027b15e12b01d2948497a377a70187de521e2ef01"},
+        {"dataset": "ai2d", "n": 150, "value": 0.8666666666666667, "completion_tokens": 215.05333333333334, "latency_seconds": 5.3904568040990855, "latency_n": 20, "ordered_id_sha256": "330f6fbd8fab0441d17573793c7c9e8d251ff0b7dbb5cb22d6b2786212a3fa84", "records": "results/records/main/vlm/qwen2.5-vl-7b/ai2d.jsonl", "records_sha256": "5e19b71df0b2acdc0b3f7644fc8c9a48ddebbb208e0eb37b6f414740050da4ff"},
+        {"dataset": "m3cot", "n": 150, "value": 0.8733333333333333, "completion_tokens": 198.03333333333333, "latency_seconds": 4.468878839901299, "latency_n": 20, "ordered_id_sha256": "48fa1111f42fcd62843ede045043a616c68ce8a6f39f87f186e546684af7f800", "records": "results/records/main/vlm/qwen2.5-vl-7b/m3cot.jsonl", "records_sha256": "d1cfec1c7c8b06cec94c39d983cbfed7ca812c5f9f165ff000cae5cf16581a62"}
+      ]
+    },
+    {
+      "release_id": "qwen2.5-vl-32b-bf16",
+      "config": "experiments/paper/qwen2.5-vl-32b-bf16.yaml",
+      "checkpoint": "checkpoints/qwen2.5-vl-32b-bf16/controller.pt",
+      "checkpoint_sha256": "c0c88856d760b25fb05770fb523aef2f1f9e111f479fab99284ab75bdcae2cd9",
+      "record_status": "bundled",
+      "metrics": [
+        {"dataset": "aokvqa", "n": 200, "value": 0.855, "completion_tokens": 424.88, "latency_seconds": 23.19607935200038, "latency_n": 20, "ordered_id_sha256": "0192b4c7c9b8518414e5ef555dc96f6e491e9ead83fb457a90488d0d058798f6", "records": "results/records/main/vlm/qwen2.5-vl-32b-bf16/aokvqa.jsonl", "records_sha256": "9e49f5b501921a32e09a1866f50819910a217b8505a48b17a7feebfa8ff597ad"},
+        {"dataset": "ai2d", "n": 150, "value": 0.9, "completion_tokens": 364.3933333333333, "latency_seconds": 19.224645099349438, "latency_n": 20, "ordered_id_sha256": "330f6fbd8fab0441d17573793c7c9e8d251ff0b7dbb5cb22d6b2786212a3fa84", "records": "results/records/main/vlm/qwen2.5-vl-32b-bf16/ai2d.jsonl", "records_sha256": "35e8595569f770bbc4e060da84f4ea162462e44dfc65d87af3cbf446ebb6943e"},
+        {"dataset": "m3cot", "n": 150, "value": 0.88, "completion_tokens": 408.73333333333335, "latency_seconds": 20.132074722397373, "latency_n": 20, "ordered_id_sha256": "48fa1111f42fcd62843ede045043a616c68ce8a6f39f87f186e546684af7f800", "records": "results/records/main/vlm/qwen2.5-vl-32b-bf16/m3cot.jsonl", "records_sha256": "7d48c16102f5130e21aa1ef79a1113b2d453cd566650b2bb6f3f7b0bceb3dbc5"}
+      ]
+    }
+  ]
+}

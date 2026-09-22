@@ -1,0 +1,62 @@
+name: Release checks
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install package and test dependencies
+        run: python -m pip install -e '.[data,judge,vlm,dev]'
+      - name: Validate release identities and metrics
+        run: make check
+      - name: Run unit tests
+        run: make test
+      - name: Build source and wheel archives
+        run: python -m build
+      - name: Smoke-test the built wheel
+        run: |
+          python -m pip uninstall -y state-of-thought
+          python -m pip install --no-deps dist/state_of_thought-*.whl
+          cd /tmp
+          sot --help
+          python -c "import sot; assert sot.__version__ == '1.0.0'"
+
+  release:
+    if: startsWith(github.ref, 'refs/tags/v')
+    needs: package
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Build release archives
+        run: |
+          python -m pip install --upgrade build
+          python -m build
+          cd dist
+          sha256sum state_of_thought-* > SHA256SUMS
+      - name: Create GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: >-
+          gh release create "${GITHUB_REF_NAME}" dist/*
+          --verify-tag
+          --title "State-of-Thought ${GITHUB_REF_NAME}"
+          --notes-file CHANGELOG.md

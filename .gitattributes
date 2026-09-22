@@ -1,0 +1,4 @@
+checkpoints/**/*.pt filter=lfs diff=lfs merge=lfs -text
+checkpoints/**/*.joblib filter=lfs diff=lfs merge=lfs -text
+checkpoints/exploratory/embed/**/embedding_pca.json filter=lfs diff=lfs merge=lfs -text
+data/training/**/*.jsonl.gz filter=lfs diff=lfs merge=lfs -text
