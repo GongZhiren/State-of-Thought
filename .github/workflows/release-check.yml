@@ -11,14 +11,17 @@ jobs:
   package:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           lfs: true
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.11"
       - name: Install package and test dependencies
-        run: python -m pip install -e '.[data,judge,vlm,dev]'
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements-tested.txt
+          python -m pip install --no-deps -e .
       - name: Validate release identities and metrics
         run: make check
       - name: Run unit tests
@@ -40,15 +43,15 @@ jobs:
       contents: write
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           lfs: true
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.11"
       - name: Build release archives
         run: |
-          python -m pip install --upgrade build
+          python -m pip install build==1.6.0
           python -m build
           cd dist
           sha256sum state_of_thought-* > SHA256SUMS
