@@ -25,7 +25,13 @@ jobs:
       - name: Validate release identities and metrics
         run: make check
       - name: Run unit tests
-        run: make test
+        run: |
+          status=0
+          PYTHONPATH=src python -m pytest -q --junitxml=pytest.xml || status=$?
+          if [ "$status" -ne 0 ]; then
+            python scripts/report_pytest_failures.py pytest.xml
+            exit "$status"
+          fi
       - name: Build source and wheel archives
         run: python -m build
       - name: Smoke-test the built wheel
