@@ -9,6 +9,27 @@
   A compact dynamics-geometric state controls evidence access and decides when reasoning is ready to commit.
 </p>
 
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://arxiv.org/abs/2609.16055"><strong>📄 Read the paper</strong></a><br>
+      <sub>Method, analysis, and complete results</sub>
+    </td>
+    <td align="center">
+      <a href="https://gongzhiren.github.io/SoT-website/"><strong>🌐 Explore the project</strong></a><br>
+      <sub>Visual overview of State-of-Thought</sub>
+    </td>
+    <td align="center">
+      <a href="https://gongzhiren.github.io/SoT-website/tutorial.html"><strong>▶ Follow the tutorial</strong></a><br>
+      <sub>A guided walkthrough of the method</sub>
+    </td>
+    <td align="center">
+      <a href="https://github.com/GongZhiren/State-of-Thought/releases/tag/v1.0.0"><strong>📦 Use the release</strong></a><br>
+      <sub>Code, checkpoints, and result records</sub>
+    </td>
+  </tr>
+</table>
+
 <p align="center">
   <a href="https://arxiv.org/abs/2609.16055"><img src="https://img.shields.io/badge/arXiv-2609.16055-b31b1b?style=flat-square" alt="arXiv"></a>
   <a href="https://github.com/GongZhiren/State-of-Thought/releases/tag/v1.0.0"><img src="https://img.shields.io/github/v/release/GongZhiren/State-of-Thought?display_name=tag&style=flat-square&color=2563eb" alt="GitHub release"></a>
@@ -18,12 +39,12 @@
 </p>
 
 <p align="center">
-  <a href="https://arxiv.org/abs/2609.16055"><strong>Paper</strong></a> ·
-  <a href="https://gongzhiren.github.io/SoT-website/"><strong>Project page</strong></a> ·
-  <a href="https://gongzhiren.github.io/SoT-website/tutorial.html"><strong>Tutorial</strong></a> ·
+  <a href="#why-state-of-thought"><strong>Why SoT?</strong></a> ·
   <a href="#quick-start"><strong>Quick start</strong></a> ·
+  <a href="#whats-in-the-release"><strong>Release contents</strong></a> ·
+  <a href="#released-model-matrix"><strong>Model matrix</strong></a> ·
   <a href="REPRODUCIBILITY.md"><strong>Reproduce</strong></a> ·
-  <a href="https://github.com/GongZhiren/State-of-Thought/releases/tag/v1.0.0"><strong>Release</strong></a>
+  <a href="#paper"><strong>Citation</strong></a>
 </p>
 
 <p align="center">
@@ -80,25 +101,24 @@ Add `.[vlm]` for vision-language inputs or `.[judge]` for the trajectory-quality
 experiment. Backbone weights are downloaded separately from Hugging Face;
 gated models require accepting their licenses and running `hf auth login`.
 
-### 2. Verify a released checkpoint
+### 2. Choose a reproduction path
 
-This command is GPU-free and does not load a backbone:
+| Goal | What it requires | Start here |
+|---|---|---|
+| Audit a released controller | CPU, seconds; no backbone | `sot checkpoint verify checkpoints/llama-3.1-8b/controller.pt` |
+| Validate an evaluation split | Prepared data; no model inference | `sot data validate --config experiments/paper/llama-3.1-8b.yaml` |
+| Evaluate the frozen controller | The named backbone and evaluation data | `sot evaluate --config experiments/paper/llama-3.1-8b.yaml` |
+| Refit all 582 parameters | Released offline trajectories; no backbone forward pass | `sot train --config experiments/paper/llama-3.1-8b.yaml` |
 
-```bash
-sot checkpoint verify checkpoints/llama-3.1-8b/controller.pt
-```
-
-### 3. Evaluate or refit
-
-Prepare the evaluation data described in [`data/README.md`](data/README.md),
-then validate the frozen split before evaluation:
+Prepare evaluation data as described in [`data/README.md`](data/README.md).
+A typical validation and evaluation flow is:
 
 ```bash
 sot data validate --config experiments/paper/llama-3.1-8b.yaml
 sot evaluate --config experiments/paper/llama-3.1-8b.yaml
 ```
 
-Refit the controller end to end from the released offline trajectories:
+To reproduce controller fitting from the released trajectories:
 
 ```bash
 sot train --config experiments/paper/llama-3.1-8b.yaml
@@ -118,6 +138,17 @@ checkpoint identity, record hashes, token counts, and wall-clock measurements.
 | **Results** | curated summaries, immutable manifests, and publication-aligned per-example records | [`results/`](results/) |
 | **Data contract** | ordered sample/reference hashes and reproducible VLM preparation | [`data/`](data/) |
 | **Verification** | checkpoint, result, privacy, lint, package, and unit-test gates | [`Makefile`](Makefile) |
+
+### Released model matrix
+
+| Modality | Released backbone configurations | Evaluation coverage |
+|---|---|---|
+| **Text** | Llama-3.1-8B, Qwen2.5-14B, Mixtral-8×7B | 16 fixed reasoning datasets per backbone |
+| **Vision–language** | Qwen2.5-VL-7B, Qwen2.5-VL-32B (BF16) | A-OKVQA, AI2D, and M3CoT |
+
+Curated metrics live in [`results/summaries/`](results/summaries/). Bundled
+per-example records are under [`results/records/`](results/records/), and
+[`results/manifest.json`](results/manifest.json) binds their provenance.
 
 Training logs, temporary sweeps, failed or superseded runs, and unstructured
 process files are intentionally excluded. Baseline implementations,
