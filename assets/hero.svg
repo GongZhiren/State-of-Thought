@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="520" viewBox="0 0 1600 520" role="img" aria-labelledby="title desc">
+  <title id="title">State-of-Thought</title>
+  <desc id="desc">Endogenous reasoning with a four-dimensional state and a 582-parameter controller over frozen language and vision-language backbones.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#071426"/><stop offset="0.55" stop-color="#10264a"/><stop offset="1" stop-color="#18213d"/></linearGradient>
+    <radialGradient id="blue-glow"><stop offset="0" stop-color="#60a5fa" stop-opacity="0.30"/><stop offset="1" stop-color="#60a5fa" stop-opacity="0"/></radialGradient>
+    <radialGradient id="orange-glow"><stop offset="0" stop-color="#fb923c" stop-opacity="0.24"/><stop offset="1" stop-color="#fb923c" stop-opacity="0"/></radialGradient>
+    <linearGradient id="state-ring" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#60a5fa"/><stop offset="0.55" stop-color="#34d399"/><stop offset="1" stop-color="#fb923c"/></linearGradient>
+    <pattern id="grid" width="42" height="42" patternUnits="userSpaceOnUse"><path d="M42 0H0V42" fill="none" stroke="#94a3b8" stroke-opacity="0.08" stroke-width="1"/></pattern>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="10" stdDeviation="15" flood-color="#020617" flood-opacity="0.48"/></filter>
+    <marker id="arrow-blue" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#60a5fa"/></marker>
+    <marker id="arrow-orange" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#fb923c"/></marker>
+  </defs>
+  <rect width="1600" height="520" rx="34" fill="url(#background)"/><rect width="1600" height="520" rx="34" fill="url(#grid)"/>
+  <circle cx="1330" cy="90" r="390" fill="url(#blue-glow)"/><circle cx="1060" cy="500" r="330" fill="url(#orange-glow)"/>
+  <path d="M0 455C260 380 390 505 670 432S1110 342 1600 442V520H0Z" fill="#0b1730" fill-opacity="0.48"/>
+  <g font-family="Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+    <text x="104" y="122" fill="#7dd3fc" font-size="23" font-weight="700" letter-spacing="5">ENDOGENOUS REASONING</text>
+    <text x="98" y="222" fill="#f8fafc" font-size="76" font-weight="760" letter-spacing="-2">State-of-Thought</text>
+    <text x="103" y="278" fill="#cbd5e1" font-size="28" font-weight="420">Reason over internal dynamics—not only tokens.</text>
+    <text x="103" y="327" fill="#94a3b8" font-size="21">A compact state conditions evidence access and decides when to commit.</text>
+    <g font-size="18" font-weight="650">
+      <g transform="translate(102 373)"><rect width="150" height="48" rx="24" fill="#172d51" stroke="#60a5fa" stroke-opacity="0.65"/><circle cx="25" cy="24" r="6" fill="#60a5fa"/><text x="43" y="30" fill="#dbeafe">4D state</text></g>
+      <g transform="translate(269 373)"><rect width="248" height="48" rx="24" fill="#2b2030" stroke="#fb923c" stroke-opacity="0.72"/><circle cx="25" cy="24" r="6" fill="#fb923c"/><text x="43" y="30" fill="#ffedd5">582 trainable params</text></g>
+      <g transform="translate(534 373)"><rect width="224" height="48" rx="24" fill="#112d2d" stroke="#34d399" stroke-opacity="0.62"/><circle cx="25" cy="24" r="6" fill="#34d399"/><text x="43" y="30" fill="#d1fae5">Frozen backbone</text></g>
+    </g>
+  </g>
+  <g transform="translate(1015 260)" filter="url(#shadow)">
+    <circle r="148" fill="#071426" fill-opacity="0.86" stroke="url(#state-ring)" stroke-width="3"/><circle r="104" fill="none" stroke="#94a3b8" stroke-opacity="0.26" stroke-dasharray="7 10" stroke-width="2"/>
+    <path d="M-69-79C-15-125 68-103 101-43" fill="none" stroke="#60a5fa" stroke-width="4" marker-end="url(#arrow-blue)"/><path d="M102 41C68 106-17 127-76 76" fill="none" stroke="#fb923c" stroke-width="4" marker-end="url(#arrow-orange)"/>
+    <g stroke="#e2e8f0" stroke-opacity="0.26" stroke-width="2"><path d="M-73-76L74-72L81 71L-76 76Z"/><path d="M-73-76L81 71M74-72L-76 76"/></g>
+    <g><circle cx="-73" cy="-76" r="18" fill="#172d51" stroke="#60a5fa" stroke-width="3"/><circle cx="74" cy="-72" r="18" fill="#112d2d" stroke="#34d399" stroke-width="3"/><circle cx="81" cy="71" r="18" fill="#2b2030" stroke="#fb923c" stroke-width="3"/><circle cx="-76" cy="76" r="18" fill="#252646" stroke="#a78bfa" stroke-width="3"/><circle r="56" fill="#10264a" stroke="#e2e8f0" stroke-opacity="0.48" stroke-width="2"/><circle r="43" fill="url(#state-ring)" fill-opacity="0.18"/></g>
+    <g fill="#f8fafc" font-family="Inter, ui-sans-serif, system-ui, sans-serif" text-anchor="middle"><text y="-6" font-size="27" font-weight="760">SoT</text><text y="23" font-size="15" fill="#cbd5e1">state control</text></g>
+  </g>
+  <g font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="17" font-weight="650" fill="#cbd5e1">
+    <g transform="translate(1240 168)"><rect width="245" height="50" rx="15" fill="#0b1730" stroke="#60a5fa" stroke-opacity="0.38"/><text x="122" y="31" text-anchor="middle">select useful evidence</text></g>
+    <g transform="translate(1240 301)"><rect width="245" height="50" rx="15" fill="#0b1730" stroke="#fb923c" stroke-opacity="0.38"/><text x="122" y="31" text-anchor="middle">commit at the right step</text></g>
+  </g>
+</svg>
