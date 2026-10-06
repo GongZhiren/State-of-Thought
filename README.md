@@ -9,6 +9,10 @@
   A compact dynamics-geometric state controls evidence access and decides when reasoning is ready to commit.
 </p>
 
+<p align="center">
+  <a href="https://gongzhiren.github.io/personal-website/"><strong>Zhiren Gong</strong></a>, Yikun Hou, Zihao Zeng, Ming Xiao, Chau Yuen, Wei Yang Bryan Lim
+</p>
+
 <table>
   <tr>
     <td align="center">
